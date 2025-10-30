@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Neon Web Design — Replica</title>
+ <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <!-- decorative blobs -->
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="stage" role="main" aria-label="Neon design mockup">
+
+    <!-- LEFT: hero mockup with mock screen -->
+    <div class="card-left" aria-hidden="false">
+      <div class="web-badge">
+        <div class="dot">W</div>
+        <h3>WEB DESIGN • ANIMATION</h3>
+      </div>
+
+      <div class="mock-screen" role="img" aria-label="Sample UI screen">
+        <div class="controls">
+          <div class="ctrl c1"></div>
+          <div class="ctrl c2"></div>
+          <div class="ctrl c3"></div>
+        </div>
+
+        <div class="panel-row" style="position:relative; z-index:2;">
+          <div class="mini">
+            <div style="font-weight:700; font-size:13px;">UI</div>
+            <div style="opacity:.9; font-size:11px; margin-top:8px;">Live preview</div>
+          </div>
+          <div class="mini">
+            <div style="font-weight:700; font-size:13px;">UX</div>
+            <div style="opacity:.9; font-size:11px; margin-top:8px;">Interactions</div>
+          </div>
+          <div class="mini">
+            <div style="font-weight:700; font-size:13px;">3D</div>
+            <div style="opacity:.9; font-size:11px; margin-top:8px;">Shadows</div>
+          </div>
+        </div>
+
+        <div class="big-code">
+          <div class="scanner" aria-hidden="true"></div>
+          <pre aria-hidden="false">
+<span class="comm">// demo: animated layout</span>
+<span class="kw">function</span> <span class="tag">render()</span> {
+  <span class="kw">const</span> ui = {
+    header: "<span class='str'>&lt;HTML&gt;</span>",
+    style: "<span class='str'>neon</span>"
+  };
+  <span class="kw">return</span> ui;
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: multiple code panes -->
+    <div class="card-right">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-weight:700;font-size:16px;">Live Code</div>
+        <div class="stats">
+          <div class="stat"><div class="glow-ring"></div><div>HTML</div></div>
+          <div class="stat"><div class="glow-ring" style="background:linear-gradient(135deg,var(--neon2),var(--accent));"></div><div>CSS</div></div>
+        </div>
+      </div>
+
+      <div class="code-window" aria-hidden="false">
+        <div class="pane" aria-label="HTML pane">
+          <pre>
+<span class="comm">/* index.html */</span>
+<span class="kw">&lt;!DOCTYPE</span> <span class="tag">html</span><span class="kw">&gt;</span>
+<span class="kw">&lt;html</span> <span class="tag">lang</span>=<span class="str">"en"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="str">charset</span>=<span class="str">"utf-8"</span><span class="tag">/&gt;</span>
+  <span class="kw">&lt;/head&gt;</span>
+<span class="kw">&lt;/html&gt;</span>
+          </pre>
+        </div>
+
+        <div class="pane" aria-label="CSS pane">
+          <pre>
+<span class="comm">/* styles.css */</span>
+<span class="kw">body</span> { <span class="kw">background</span>: <span class="str">linear-gradient</span>(...); }
+<span class="kw">.blob</span> { <span class="kw">animation</span>: <span class="str">float</span>(...); }
+          </pre>
+        </div>
+
+        <div class="pane" style="grid-column:1 / span 2; height:120px;">
+          <pre>
+<span class="line">&lt;!-- Animated lines show activity --&gt;</span>
+<span class="line">&lt;div class="blob"&gt;&lt;/div&gt;</span>
+<span class="line">&lt;div class="mock-screen"&gt;…&lt;/div&gt;</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  // optional: small JS to add subtle random float offsets for blobs (makes it feel alive)
+  (function(){
+    const blobs = document.querySelectorAll('.blob');
+    function jitter(){
+      blobs.forEach((b,i)=>{
+        const rx = (Math.random()-0.5)*12;
+        const ry = (Math.random()-0.5)*18;
+        const s = 0.95 + Math.random()*0.12;
+        b.style.transform = `translate(${rx}px, ${ry}px) scale(${s})`;
+      });
+    }
+    setInterval(jitter, 2200);
+  })();
+</script>
+</body>
+</html>
